@@ -1,4 +1,4 @@
-# (c) PR0FESS0R-99
+# (c) yaduvind
 from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
@@ -29,7 +29,8 @@ async def filter(client, message):
         except UserNotParticipant:
             await client.send_message(
                 chat_id=message.from_user.id,
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**തായെ കാണുന്ന ചാനലിൽ നിങ്ങൾ ഇല്ല അത് കൊണ്ട് നിങ്ങൾക് സിനിമ കിട്ടില്ല...
+സിനിമ കിട്ടാനായി താഴെ കാണുന്ന JOIN MY EF UPDATE CHANNEL എന്ന ബട്ടനിൽ ക്ലിക്ക് ചെയ്തു ഞങ്ങളുടെ മെയിൻ ചാനലിൽ ജോയിൻ ചെയ്യുക എങ്കിൽ മാത്രമേ നിങ്ങൾക്ക് മൂവി ഈ ബോട്ട് വഴി ലഭിക്കുകയുള്ളു. അതു കഴ്ഞ്ഞു തായേ കാണുന്ന 👉"Try again"👈 എന്നുള്ളതിൽ ക്ലിക്ക് ചെയ്തു Start കൊടുത്താൽ നിങ്ങൾക്ക് മൂവി കിട്ടുന്നതാണ്...😁😁!**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -53,12 +54,12 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**📤 Uploaded by {message.chat.title}**"
+        mo_tech_yt = f"** 🎬Movie Name:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**📤 Uploaded by {message.chat.title}**"
         files = await get_filter_results(query=search)
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"[{get_size(file.file_size)}] {file.file_name}"
+                filename = f"🚀[{get_size(file.file_size)}] 🌟{file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"pr0fess0r_99#{file_id}")]
                     )
@@ -115,7 +116,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**📤 Uploaded by {message.chat.title}**"
+        mo_tech_yt = f"** 🎬Movie Name:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**📤 Uploaded by {message.chat.title}**"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
@@ -125,7 +126,7 @@ async def group(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"[{get_size(file.file_size)}] {file.file_name}"
+                filename = f"🚀[{get_size(file.file_size)}] 🌟{file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
